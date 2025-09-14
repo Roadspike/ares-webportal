@@ -1,38 +1,26 @@
-
-<table class="table table-striped plots-list">
-
-
-<thead>
-  <th class="col-xs-3">Plot</th>
-  <th class="col-xs-2">Storytellers</th>
-  <th class="col-xs-3 hidden-xs hidden-sm">Dates</th>
-  <th class="col-xs-4">Summary</th>
-</thead>
-
-<tbody>
-
 {{#each this.plots as |plot|}}
-  <tr>
-      <td>
-      <LinkTo @route="plot" @model={{plot.id}}>{{plot.title}}</LinkTo>
-      </td>
-      <td>
-        {{#each plot.storytellers as |storyteller|}}
-          <CharIconTiny @char={{storyteller}} />
-        {{/each}}
-      </td>
-      <td class="hidden-xs hidden-sm">
-      {{plot.start_date}} - {{plot.end_date}}
-      </td>        
-      <td>
-          <AnsiFormat @text={{plot.summary}} />
-          {{#if plot.content_warning}}
-          <ContentWarningTag @warning={{plot.content_warning}} />
-          {{/if}}
-          
-      </td>
-  </tr>
+<div class="plot-container"
+	<div class="plot-header">
+		<div class="plot-title"><LinkTo @route="plot" @model={{plot.id}}>{{plot.title}}</LinkTo></div>
+		<div class="plot-chevrons"><LinkTo @route="plot" @model={{plot.id}}><i class="fa-duotone fa-solid fa-chevrons-right"></i></LinkTo></div>
+	</div>
+	<div class="plot-subheader">
+		<div class="plot-storytellers"
+			<i class="fa-duotone fa-solid fa-user-pen"></i>
+    		{{#each plot.storytellers as |storyteller|}}
+    		  <CharIconTiny @char={{storyteller}} />
+   		   {{/each}}
+		</div>
+		<div class="plot-date-range"
+			<i class="fa-duotone fa-solid fa-calendar-range"></i>
+			{{plot.start_date}} - {{plot.end_date}}
+		</div>
+	</div>
+	<div class="plot-details">
+   		<AnsiFormat @text={{plot.summary}} />
+    	{{#if plot.content_warning}}
+    		<ContentWarningTag @warning={{plot.content_warning}} />
+    	{{/if}}
+	</div>
+</div>
 {{/each}}
-
-</tbody>
-</table>
