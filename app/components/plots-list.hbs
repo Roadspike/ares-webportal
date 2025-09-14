@@ -1,7 +1,11 @@
 {{#each this.plots as |plot|}}
 <div class="plot-container">
 	<div class="plot-header">
-		<div class="plot-title"><LinkTo @route="plot" @model={{plot.id}}>{{plot.title}}</LinkTo></div>
+		<div class="plot-title"><LinkTo @route="plot" @model={{plot.id}}>{{plot.title}}</LinkTo>
+        	{{#if plot.content_warning}}
+    		<ContentWarningTag @warning={{plot.content_warning}} />
+        	{{/if}}
+    </div>
 		<div class="plot-chevrons"><LinkTo @route="plot" @model={{plot.id}}><i class="fa-duotone fa-solid fa-chevrons-right"></i></LinkTo></div>
 	</div>
 	<div class="plot-subheader">
@@ -18,9 +22,6 @@
 	</div>
 	<div class="plot-details">
    		<AnsiFormat @text={{plot.summary}} />
-    	{{#if plot.content_warning}}
-    		<ContentWarningTag @warning={{plot.content_warning}} />
-    	{{/if}}
 	</div>
 </div>
 {{/each}}
