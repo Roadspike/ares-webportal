@@ -1,17 +1,17 @@
 {{#each this.plots as |plot|}}
-<div class="plot-container"
+<div class="plot-container">
 	<div class="plot-header">
 		<div class="plot-title"><LinkTo @route="plot" @model={{plot.id}}>{{plot.title}}</LinkTo></div>
 		<div class="plot-chevrons"><LinkTo @route="plot" @model={{plot.id}}><i class="fa-duotone fa-solid fa-chevrons-right"></i></LinkTo></div>
 	</div>
 	<div class="plot-subheader">
-		<div class="plot-storytellers"
+		<div class="plot-storytellers">
 			<i class="fa-duotone fa-solid fa-user-pen"></i>
     		{{#each plot.storytellers as |storyteller|}}
     		  <CharIconTiny @char={{storyteller}} />
    		   {{/each}}
 		</div>
-		<div class="plot-date-range"
+		<div class="plot-date-range">
 			<i class="fa-duotone fa-solid fa-calendar-range"></i>
 			{{plot.start_date}} - {{plot.end_date}}
 		</div>
