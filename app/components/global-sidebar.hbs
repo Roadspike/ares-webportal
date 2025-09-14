@@ -44,7 +44,7 @@
 {{#if (not this.model.game.disabled_plugins.events)}}
 <div class="sidebar-box {{this.boxStyle}}">
   <div class="sidebar-heading">
-      <h2>Upcoming Events <i class="fa-duotone fa-solid fa-calendar-users" aria-hidden="true"></i></h2>
+      <h2>Upcoming Events <i class="fa-duotone fa-solid fa-calendar" aria-hidden="true"></i></h2>
   </div>
   {{#each this.model.upcoming_events as |event|}}
   <p><b><LinkTo @route="event" @model={{event.id}}>
