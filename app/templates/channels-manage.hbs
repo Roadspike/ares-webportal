@@ -28,8 +28,8 @@
     <td>{{channel.can_talk}}</td>
     <td>
     
-      <TooltipButton @route="channel-edit" @model={{channel.id}} @icon="fas fa-edit" @message="Edit Channel" />
-      <TooltipButton @onClick={{(fn this.setChannelToDelete channel)}} @icon="fa fa-trash" @message="Delete Channel" />
+      <TooltipButton @route="channel-edit" @model={{channel.id}} @icon="fa-duotone fa-solid fa-pen-to-square" @message="Edit Channel" />
+      <TooltipButton @onClick={{(fn this.setChannelToDelete channel)}} @icon="fa-duotone fa-solid fa-trash" @message="Delete Channel" />
     
     </td>
   </tr>
