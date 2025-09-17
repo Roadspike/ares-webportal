@@ -39,7 +39,7 @@
     <tr>
         <td>
           {{#if forum.unread}}
-          <span class="badge rounded-pill bg-primary"> <i class="fa fa-flag" aria-label="New Activity"></i></span>
+          <span class="badge rounded-pill bg-primary"> <i class="fa-duotone fa-solid fa-flag" aria-label="New Activity"></i></span>
           {{/if}}
         </td>
         
@@ -64,7 +64,7 @@
             
         </td>
         <td>
-          <TooltipButton @onClick={{(fn this.hideCategory forum true)}} @position="left" @message="Hide category." @icon="fa fa-eye-slash" />
+          <TooltipButton @onClick={{(fn this.hideCategory forum true)}} @position="left" @message="Hide category." @icon="fa-duotone fa-solid fa-eye-slash" />
         </td>
     </tr>
 {{/each}}
@@ -77,7 +77,7 @@
 <h4>Hidden</h4>
 {{#each this.model.hidden as |forum|}}
 <LinkTo @route="forum-category" @model={{forum.id}}>{{forum.name}}</LinkTo>          
-      <TooltipButton @onClick={{(fn this.hideCategory forum false)}} @position="top" @message="Show category." @icon="fa fa-eye" />
+      <TooltipButton @onClick={{(fn this.hideCategory forum false)}} @position="top" @message="Show category." @icon="fa-duotone fa-solid fa-eye" />
      &nbsp; &nbsp;
 {{/each}}
 {{/if}}
