@@ -4,15 +4,15 @@
 
 <div class="chat-controls">
 
-  <button class="btn-link" {{on 'click' this.toggleChannelInfo}}><i class="fas fa-info-circle"></i> Channel Info</button>
+  <button class="btn-link" {{on 'click' this.toggleChannelInfo}}><i class="fa-duotone fa-solid fa-circle-info"></i> Channel Info</button>
 
-  <button class="btn-link" {{on 'click' this.scrollDown}}><i class="fas fa-angle-double-down"></i> Jump to End</button>
+  <button class="btn-link" {{on 'click' this.scrollDown}}><i class="fa-duotone fa-solid fa-angles-down"></i> Jump to End</button>
 
   {{#if this.scrollPaused}}
-          <button class="btn-link" {{on 'click' this.unpauseScroll}}><i class="fas fa-play">
+          <button class="btn-link" {{on 'click' this.unpauseScroll}}><i class="fa-duotone fa-solid fa-play">
           </i> Resume Scrolling</button>
   {{else}}
-          <button class="btn-link" {{on 'click' this.pauseScroll}}><i class="fas fa-pause"></i> Pause Scrolling</button>
+          <button class="btn-link" {{on 'click' this.pauseScroll}}><i class="fa-duotone fa-solid fa-pause"></i> Pause Scrolling</button>
   {{/if}}
 </div>  
   
@@ -30,7 +30,7 @@
         
       {{#each this.channel.who as |who|}}
         <CharIconInline @char={{who}} />
-        {{#if who.muted}}<i class="fa fa-microphone-slash"></i>{{/if}}
+        {{#if who.muted}}<i class="fa-duotone fa-solid fa-microphone-slash"></i>{{/if}}
 
       {{/each}}
       </div>
