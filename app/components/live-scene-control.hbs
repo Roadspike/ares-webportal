@@ -30,7 +30,7 @@
          {{#if this.scrollPaused}}
            <TooltipButton @position="left" @message="Resume scrolling." @icon="fa-duotone fa-regular fa-play" @onClick={{this.unpauseScroll}} />
          {{else}}
-           <TooltipButton @position="left" @message="Pause scrolling." @icon="fa-duotone fa-regular fa-pause" @onClick={{this.pauseScroll}} />
+           <TooltipButton @position="left" @message="Pause scrolling." @icon="fa-duotone fa-solid fa-pause" @onClick={{this.pauseScroll}} />
          {{/if}}
      
          {{#if this.scene.is_watching}}
