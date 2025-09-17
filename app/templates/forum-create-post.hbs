@@ -14,7 +14,9 @@
     <Input @type="text" id="subject" @value={{this.subject}} size={{100}} />
     
     <p><b>Message:</b></p>
+  <div class="wiki-markdown">
     <MarkdownEditor @text={{this.message}} />
+  </div>
 
 <div class="action-buttons">
     <LinkTo @route="forum-category" @model={{this.model.id}} class="btn btn-secondary">Cancel</LinkTo>
