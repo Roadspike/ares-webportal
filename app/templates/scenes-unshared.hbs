@@ -37,7 +37,7 @@
     </div>
     {{#if scene.in_trash}}     
     <div class="alert alert-warning scene-deletion-warning">
-      <i class="fa fa-trash"></i>
+      <i class="fa-duotone fa-solid fa-trash"></i>
       Marked for deletion. Download, share, or restart before it's deleted on {{scene.trash_date}}.
     </div>
     {{/if}}
@@ -58,13 +58,13 @@
       </div>
         
       <div class="unshared-scene-controls">
-            <LinkTo @route="scene-live" @model={{scene.id}}><i class="fa fa-eye" aria-label="View Scene"></i> View </LinkTo>
+            <LinkTo @route="scene-live" @model={{scene.id}}><i class="fa-duotone fa-solid fa-eye" aria-label="View Scene"></i> View </LinkTo>
           {{#if scene.can_edit}}
-             <LinkTo @route="scene-edit" @model={{scene.id}}><i class="fa fa-edit" aria-label="Edit Scene"></i> Edit</LinkTo>
+             <LinkTo @route="scene-edit" @model={{scene.id}}><i class="fa-duotone fa-solid fa-pen-to-square" aria-label="Edit Scene"></i> Edit</LinkTo>
              <button class="btn-link" {{on 'click' (fn this.changeSceneStatus scene 'restart')}}><i class="fa fa-play" aria-label="Restart Scene"></i> Restart</button>
-              <button class="btn-link" {{on 'click' (fn this.changeSceneStatus scene 'share')}}><i class="fa fa-share" aria-label="Share Scene"></i> Share</button>        
+              <button class="btn-link" {{on 'click' (fn this.changeSceneStatus scene 'share')}}><i class="fa-duotone fa-regular fa-share" aria-label="Share Scene"></i> Share</button>        
           {{/if}}
-            <LinkTo @route="scene-download" @model={{scene.id}}><i class="fa fa-download" aria-label="Download Scene"></i> Download </LinkTo>
+            <LinkTo @route="scene-download" @model={{scene.id}}><i class="fa-duotone fa-solid fa-download" aria-label="Download Scene"></i> Download </LinkTo>
       </div>
     </div>
   </div>
