@@ -32,13 +32,13 @@
   
 {{#if this.model.options.is_job_admin}}
     <div>
-      <LinkTo @route="search-jobs"><i class="fa fa-search" aria-hidden="true"></i> Search Jobs</LinkTo>  &nbsp;&nbsp;
+      <LinkTo @route="search-jobs" class="btn btn-secondary"><i class="fa-duotone fa-solid fa-box-magnifying-glass" aria-hidden="true"></i> Search Jobs</LinkTo>
       <button {{on 'click' this.markRead}} class="btn btn-secondary">Mark All Read</button>
       <LinkTo @route="job-create" class="btn btn-primary">Create Job</LinkTo>
     </div>
 {{else}}
     <div>
-      <LinkTo @route="search-jobs"><i class="fa fa-search" aria-hidden="true"></i> Search Requests</LinkTo>  &nbsp;&nbsp;
+      <LinkTo @route="search-jobs" class="btn btn-secondary"><i class="fa-duotone fa-solid fa-box-magnifying-glass" aria-hidden="true"></i> Search Jobs</LinkTo>
       <LinkTo @route="job-create" class="btn btn-primary">Create Request</LinkTo>
     </div>
 {{/if}}
