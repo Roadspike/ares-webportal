@@ -10,7 +10,7 @@
     
     {{#if this.scene.in_trash}}     
     <div class="alert alert-warning scene-deletion-warning">
-      <i class="fa-duotone fa-solid fa-trash"></i>
+      <i class="fa-duotone fa-solid fa-trash-can"></i>
       Marked for deletion. Download, share, or restart before it's deleted on {{this.scene.trash_date}}.
     </div>
     {{/if}}
@@ -30,7 +30,7 @@
          {{#if this.scrollPaused}}
            <TooltipButton @position="left" @message="Resume scrolling." @icon="fa-duotone fa-regular fa-play" @onClick={{this.unpauseScroll}} />
          {{else}}
-           <TooltipButton @position="left" @message="Pause scrolling." @icon="fa-duotone fa-solid fa-pause" @onClick={{this.pauseScroll}} />
+           <TooltipButton @position="left" @message="Pause scrolling." @icon="fa-duotone fa-regular fa-pause" @onClick={{this.pauseScroll}} />
          {{/if}}
      
          {{#if this.scene.is_watching}}
@@ -163,7 +163,7 @@
                  <button {{on 'click' (fn this.addPose this.poseType.id)}} class="btn btn-primary">Add {{this.poseType.title}}</button>
                  <button {{on 'click' (fn this.addPose 'ooc')}} class="btn btn-secondary">Add OOC</button>
                  <button {{on 'click' this.loadLastPose}} class="btn btn-secondary">
-                   <TooltipIcon @position="right" @message="Reload Last" @icon="fa-duotone fa-solid fa-arrow-rotate-left" />
+                   <TooltipIcon @position="right" @message="Reload Last" @icon="fa-duotone fa-solid fa-rotate-left" />
                  </button>
                  
                  {{#if this.txtExtraInstalled}}
