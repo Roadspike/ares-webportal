@@ -57,7 +57,7 @@
                     {{#if (not pose.editActive)}}
                     <TooltipButton @onClick={{(fn this.editScenePose pose)}} @icon="fa-duotone fa-solid fa-pen-to-square" @message="Edit Pose" />
                     {{#if pose.can_delete}}
-                    <TooltipButton @onClick={{(fn this.setConfirmDeleteScenePose pose)}} @icon="fa-duotone fa-solid fa-trash" @message="Delete Pose" />
+                    <TooltipButton @onClick={{(fn this.setConfirmDeleteScenePose pose)}} @icon="fa-duotone fa-solid fa-trash-can" @message="Delete Pose" />
                     {{/if}}
                     {{/if}}
                   {{/if}}
