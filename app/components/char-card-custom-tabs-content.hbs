@@ -1,6 +1,9 @@
 <div id="systemitems" class="tab-pane fade">
-{{#each this.char.custom.items as |item|}}
-<div class="item-name">{{item.name}}</div><div class="item-desc">{{{ansi-format text=item.desc}}}</div>
-{{/each}}
+  <div class="items-list">
+    {{#each this.char.custom.items as |item|}}
+    <div class="item-name">{{item.name}}</div><div class="item-desc">{{{ansi-format text=item.desc}}}</div>
+    {{/each}}
+  </div>
 </div>
+
 
