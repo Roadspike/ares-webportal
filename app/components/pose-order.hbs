@@ -2,13 +2,13 @@
   <div class="pose-order-label">Pose Order:</div> 
   <div class="pose-order-type">
 {{#if (eq this.poseOrderType 'normal') }}
-<TooltipIcon @position="left" @message="Regular Order" @icon="fa-duotone fa-solid fa-user-hoodie" />
+<TooltipIcon @position="top" @message="Regular Order" @icon="fa-duotone fa-solid fa-user-hoodie" />
 {{else}}
-<TooltipIcon @position="left" @message="3-Per Order" @icon="fa-duotone fa-solid fa-users" />
+<TooltipIcon @position="top" @message="3-Per Order" @icon="fa-duotone fa-solid fa-users" />
 {{/if}}
 </div>
 
-  <div class="pose-order-list">
+  <div class="pose-order-list"><i class="fa-duotone fa-solid fa-pipe"></i>
 {{#each this.poseOrder as |po|}}
 {{#if (eq po.name this.playerName)}}
   <span class="your-pose-order">{{po.name}}</span>
