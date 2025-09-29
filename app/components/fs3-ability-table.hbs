@@ -10,12 +10,14 @@
         {{/if}}
       </td>
       <td><Fs3Dots @rating={{ability.rating}} @max={{this.max}} @abilityType={{this.abilityType}} />
-    
+
+        <div class="fs3-specialties">
       {{#if this.showSpecs}}
           {{#if ability.specialties}}
             ({{ability.specialties}})
           {{/if}}
       {{/if}}
+        </div>
     
       </td>
       <td>{{ability.rating_name}}</td>
