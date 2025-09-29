@@ -61,8 +61,6 @@
    <div class="card-body">
 
      <p class="cg-tip"><AnsiFormat @text={{this.model.cgInfo.fs3.abilities.action_blurb}} /></p>
-     
-     <br>
    
      {{#each this.model.char.fs3.fs3_action_skills as |skill|}}
      <Fs3Actionbox @name={{skill.name}} @rating={{skill.rating}} @ratingName={{skill.rating_name}} @maxRating={{this.model.cgInfo.fs3.max_skill_rating}} @minRating={{this.model.cgInfo.fs3.min_action_skill_rating}} @updated={{this.abilityChanged}} @specialties={{skill.specialties}}>
