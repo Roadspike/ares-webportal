@@ -1,13 +1,13 @@
 {{page-title this.model.title}}
 <h1>{{#if this.model.is_pinned}}
-      <i class="fa fa-thumbtack" aria-label="Pinned"></i>
+      <i class="fa-duotone fa-solid fa-thumbtack-angle" aria-label="Pinned"></i>
     {{/if}}
     {{this.model.title}}</h1>
 
 <div class="action-buttons-spaced">
   <div>
-    <LinkTo @route="forum-category" @model={{this.model.category.id}}><i class="fa fa-long-arrow-alt-left" aria-hidden="true"></i> Back to {{this.model.category.name}}</LinkTo> | 
-    <a href="#bottom"><i class="fas fa-angle-double-down"></i> Jump to End</a>
+    <LinkTo @route="forum-category" @model={{this.model.category.id}}><i class="fa-duotone fa-regular fa-left-long" aria-hidden="true"></i> Back to {{this.model.category.name}}</LinkTo> | 
+    <a href="#bottom"><i class="fa-duotone fa-solid fa-chevrons-down"></i> Jump to End</a>
   </div>
   
   {{#if this.isAuthenticated}}
