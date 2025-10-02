@@ -17,7 +17,7 @@
       </td>
       <td>
           {{#if post.is_pinned}}
-          <i class="fa fa-thumbtack" aria-label="Pinned"></i>
+          <i class="fa-duotone fa-solid fa-thumbtack" aria-label="Pinned"></i>
           {{/if}}
            <LinkTo @route="forum-topic" @models={{array post.category_id post.id}}>{{post.title}}</LinkTo>
        </td>
