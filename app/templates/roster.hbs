@@ -54,14 +54,14 @@
                   </div> <!-- /.roster-char-warnings -->
                 </div> <!-- /.roster-info -->
               </div> <!-- /.profile-box -->
-            </div> <!-- /.profile-wrap -->
-
-            <div>
+              <div class="roster-buttons">
               <LinkTo @route="char" @model={{char.name}} class="btn btn-secondary">Profile</LinkTo>
               {{#if (not char.app_pending)}}
                 <LinkTo @route="roster-claim" @model={{char.id}} class="btn btn-primary">Claim</LinkTo>
               {{/if}}
-            </div>
+              </div>
+            </div> <!-- /.profile-wrap -->
+
           </div> <!-- /.roster-entry -->
         {{/each}}
 
