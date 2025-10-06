@@ -27,7 +27,7 @@
                   {{else}}
                   <span class="relationship-name"><LinkTo @route="char" @model={{ship.name}}>{{ship.name_and_nickname}}</LinkTo></span>
                   {{/if}}
-                  <AnsiFormat @text={{ship.text}} />
+                  <span class="relationship-info"><AnsiFormat @text={{ship.text}} /></span>
               </div>
           </div>
         
