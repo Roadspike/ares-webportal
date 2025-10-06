@@ -16,24 +16,23 @@
   {{#each this.char.relationships as |cat|}}
 
   <div id="{{cat.key}}" class="tab-pane fade">
-    
-    {{#each cat.relationships as |ship|}}
+    <div class="relationship-bg">
+      {{#each cat.relationships as |ship|}}
+          <div class="relationship-row">
+                <RelationshipIcon @char={{ship}} />
+              
+              <div class="relationship-details ansi">
+                  {{#if ship.is_npc}}
+                  <span class="relationship-name">{{ship.name}}</span> <span class="relationship-npc">(NPC)</span>
+                  {{else}}
+                  <span class="relationship-name"><LinkTo @route="char" @model={{ship.name}}>{{ship.name_and_nickname}}</LinkTo></span>
+                  {{/if}}
+                  <AnsiFormat @text={{ship.text}} />
+              </div>
+          </div>
         
-        <div class="relationship-row">
-              <RelationshipIcon @char={{ship}} />
-            
-            <div class="relationship-details ansi">
-                {{#if ship.is_npc}}
-                <span class="relationship-name">{{ship.name}}</span> (NPC)
-                {{else}}
-                <span class="relationship-name"><LinkTo @route="char" @model={{ship.name}}>{{ship.name_and_nickname}}</LinkTo></span>
-                {{/if}}
-                <AnsiFormat @text={{ship.text}} />
-            </div>
-        </div>
-        
-     {{/each}}
-             
+       {{/each}}
+    </div>         
   </div>
   {{/each}}
 </div>
