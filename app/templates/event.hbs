@@ -56,13 +56,13 @@
      
      
      {{#if s.can_edit}}
-       <div class="event-signup-unsignup">
+       <div class="event-signup-item event-signup-unsignup">
          <button {{on 'click' (fn this.cancelSignup s.char.name)}}><i class="fa-duotone fa-solid fa-trash-can" aria-label="Cancel Signup"></i></button>
        </div>
      {{/if}}
      
      {{#if s.comment}}
-       <div class="event-signup-comment">
+       <div class="event-signup-item event-signup-comment">
          <AnsiFormat @text={{s.comment}} />
        </div>
      {{/if}}
