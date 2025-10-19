@@ -82,7 +82,7 @@
            
            {{#if reply.can_edit}}
              {{#if (not reply.editActive)}}
-             <TooltipButton @onClick={{(fn this.setReplyEditActive reply true)}} @position="left" @message="Edit reply." @icon="fa-duotone fa-solid fa-share-from-square" />
+             <TooltipButton @onClick={{(fn this.setReplyEditActive reply true)}} @position="left" @message="Edit reply." @icon="fa-duotone fa-solid fa-pen-to-square" />
              <TooltipButton  @onClick={{(fn this.setConfirmDeleteReply reply)}} @position="left" @message="Delete reply." @icon="fa-duotone fa-regular fa-trash-can" />
              {{/if}}
            {{/if}}
