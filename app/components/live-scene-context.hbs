@@ -16,7 +16,10 @@
   {{/if}}
 
   {{#each this.scene.location.details as |detail|}}
-  <p><i>{{detail.name}}:</i> <AnsiFormat @text={{detail.desc}} /></p>
+  <button data-bs-toggle="collapse" data-bs-target="#{{detail.key}}" class="btn btn-default btn-collapse" aria-expanded="true">{{detail.name}}<i class="fa fa-caret-down"></i></button>
+  <div id="{{detail.name}}" class="collapse">
+    <AnsiFormat @text={{detail.desc}} />
+  </div>
   {{/each}}
 
   {{#if this.scene.location.scene_set}}
