@@ -17,7 +17,7 @@
 
   {{#each this.scene.location.details as |detail|}}
   <button data-bs-toggle="collapse" data-bs-target="#{{detail.key}}" class="btn btn-default btn-collapse" aria-expanded="true">{{detail.name}}<i class="fa fa-caret-down"></i></button>
-  <div id="{{detail.name}}" class="collapse">
+  <div id="{{detail.key}}" class="collapse">
     <AnsiFormat @text={{detail.desc}} />
   </div>
   {{/each}}
