@@ -1,13 +1,13 @@
 
 <div class="table-responsive fs3-combat-hud">
 
-<table class="table">
+<table class="table table-striped">
 <thead>
     <th>Name</th>
-    <th>Damage</th>
+    <th class="combat-damage">Damage</th>
     <th>Weapon</th>
     <th>Armor</th>
-    <th>Vehicle/Mount</th>
+    <th class="table-minimum-width">Vehicle/Mount</th>
     <th>Stance</th>
     <th>Action</th>
     <th></th>
@@ -18,7 +18,7 @@
 
 {{#each this.combat.teams as |t| }}    
 
-<tr><td colspan="8"><h3>Team {{t.team}}
+<tr><td colspan="8" class="combat-hud-team"><h3>Team {{t.team}}
   
   {{#if t.name}}
   ({{t.name}})
