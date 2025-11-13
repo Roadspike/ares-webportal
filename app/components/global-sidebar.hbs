@@ -5,7 +5,7 @@
     </div>
   {{/unless}}
 
-  <div class="sidebar-box {{this.boxStyle}}">
+  <div class="sidebar-box game-status {{this.boxStyle}}">
     <div class="sidebar-heading">
         <h2>Game Status <i class="fa-duotone fa-solid fa-clouds-moon" aria-hidden="true"></i></h2>
     </div>
@@ -20,7 +20,7 @@
      {{#if this.model.game_down}}
       <div class="alert alert-danger">The website can't contact the game.  It may be down.</div>
      {{else}}
-   
+
       <p>Today is {{this.model.game.ictime}}.
       <br>{{this.model.game.who_count}} character(s) online.
       <br>{{this.model.game.scene_count}} scene(s) in progress.
@@ -29,12 +29,14 @@
     {{#if this.model.motd}}
     <p><AnsiFormat @text={{this.model.motd}} /></p>
     {{/if}}
-  
+
+    <div class="game-status-footer">
     <p>       
         <LinkTo @route="play">Play</LinkTo> | 
         <LinkTo @route="scenes-live">Active Scenes</LinkTo> | 
         <LinkTo @route="who">Who's Online</LinkTo> 
     </p>
+    </div>
   {{/if}}
 
   </div>
@@ -43,7 +45,7 @@
     
     
   {{#if (not this.model.game.disabled_plugins.events)}}
-  <div class="sidebar-box {{this.boxStyle}}">
+  <div class="sidebar-box upcoming-events {{this.boxStyle}}">
     <div class="sidebar-heading">
         <h2>Upcoming Events <i class="fa-duotone fa-solid fa-calendar" aria-hidden="true"></i></h2>
     </div>
@@ -69,7 +71,7 @@
 
 
 
-  <div class="sidebar-box {{this.boxStyle}}">
+  <div class="sidebar-box recent-scenes {{this.boxStyle}}">
      <div class="sidebar-heading">
          <h2>Recent Scenes <i class="fa-duotone fa-solid fa-book-sparkles" aria-hidden="true"></i></h2>
        
@@ -86,7 +88,7 @@
      <p><LinkTo @route="scenes">All Scenes</LinkTo></p>
   </div>
 
-  <div class="sidebar-box {{this.boxStyle}}">
+  <div class="sidebar-box recent-forum-posts {{this.boxStyle}}">
      <div class="sidebar-heading">
          <h2>Recent Forum Posts <i class="fa-duotone fa-solid fa-messages" aria-hidden="true"></i></h2>
        
@@ -105,7 +107,7 @@
      <p><LinkTo @route="forum">View Forum</LinkTo></p>
   </div>
 
-  <div class="sidebar-box {{this.boxStyle}}">
+  <div class="sidebar-box recent-changes {{this.boxStyle}}">
      <div class="sidebar-heading">
          <h2>Recent Changes <i class="fa-duotone fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></h2>
        
