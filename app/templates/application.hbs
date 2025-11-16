@@ -25,7 +25,7 @@
                          {{/if}}
                        </p>
                        
-                       <p>
+                       <div class="account-action-icons">
                            <LinkTo @route="notifications">
                                <span class="badge rounded-pill bg-primary notification-bell {{if (gt this.model.notification_count 0) 'active' ''}}"><i class="fa-solid fa-bell" aria-label='Unread Notifications'></i>
                                <span id="notificationBadge">{{this.model.notification_count}}</span>
@@ -47,7 +47,7 @@
                            | <LinkTo @route="logout">
                              <i class="fa-duotone fa-solid fa-right-from-bracket" aria-label="Logout"></i> 
                            </LinkTo>
-                       </p>
+                       </div>
                     {{else}}
                         <p><LinkTo @route="login" @query={{hash redirect=this.currentRoute}}>Login</LinkTo>
                         | <LinkTo @route="register">Register</LinkTo>
