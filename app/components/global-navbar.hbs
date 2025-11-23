@@ -20,7 +20,7 @@
                       <li><LinkTo class="dropdown-item" @route="notifications"><i class="fa-solid fa-bell"></i> Notifications</LinkTo></li>
                       <li><LinkTo class="dropdown-item" @route="char" @model={{this.currentUser.name}}><i class="fa-duotone fa-solid fa-user-hoodie"></i> Profile</LinkTo></li>
                       <li><LinkTo class="dropdown-item" @route="mail"><i class="fa-duotone fa-solid fa-mailbox-open-letter"></i>Mail</LinkTo></li>
-                      <li><LinkTo class="dropdown-item" @route="jobs"><i class="fa-duotone fa-solid fa-comments-question"> {{#if this.model.jobs_admin}}Jobs{{else}}Requests{{/if}}</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="jobs"><i class="fa-duotone fa-solid fa-comments-question"></i> {{#if this.model.jobs_admin}}Jobs{{else}}Requests{{/if}}</LinkTo></li>
                       <li><LinkTo class="dropdown-item" @route="account"><i class="fa-duotone fa-solid fa-cogs"></i>Account</LinkTo></li>
 
                       {{#if this.model.alts}}
