@@ -17,17 +17,17 @@
                     {{/if}}
                     </button>
                     <ul class="dropdown-menu">
-                      <li><LinkTo class="dropdown-item" @route="notifications">Notifications</LinkTo></li>
-                      <li><LinkTo class="dropdown-item" @route="char" @model={{this.currentUser.name}}>Profile</LinkTo></li>
-                      <li><LinkTo class="dropdown-item" @route="mail">Mail</LinkTo></li>
-                      <li><LinkTo class="dropdown-item" @route="jobs">{{#if this.model.jobs_admin}}Jobs{{else}}Requests{{/if}}</LinkTo></li>
-                      <li><LinkTo class="dropdown-item" @route="account">Account</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="notifications"><i class="fa-solid fa-bell"></i> Notifications</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="char" @model={{this.currentUser.name}}><i class="fa-duotone fa-solid fa-user-hoodie"></i> Profile</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="mail"><i class="fa-duotone fa-solid fa-mailbox-open-letter"></i>Mail</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="jobs"><i class="fa-duotone fa-solid fa-comments-question"> {{#if this.model.jobs_admin}}Jobs{{else}}Requests{{/if}}</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="account"><i class="fa-duotone fa-solid fa-cogs"></i>Account</LinkTo></li>
 
                       {{#if this.model.alts}}
                           <li><a class="dropdown-item" href="#" {{on 'click' (fn this.setAltSelectionVisible true)}}>Switch Alt</a></li>
                       {{/if}} 
 
-                      <li><LinkTo class="dropdown-item" @route="logout">Logout</LinkTo></li>
+                      <li><LinkTo class="dropdown-item" @route="logout"><i class="fa-duotone fa-solid fa-right-from-bracket"></i> Logout</LinkTo></li>
             
                     </ul>
                   </li>
