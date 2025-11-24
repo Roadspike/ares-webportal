@@ -3,22 +3,20 @@
 
 <table class="table table-striped">
 <thead>
-    <th>Name</th>
-    <th class="combat-damage">Damage</th>
-    <th>Weapon</th>
-    <th>Armor</th>
-    <th class="table-minimum-width">Vehicle/Mount</th>
-    <th>Stance</th>
-    <th>Action</th>
-    <th></th>
+    <th class="combat-header-name">Name (Vehicle)</th>
+    <th class="combat-header-weapon">Weapon</th>
+    <th class="combat-header-armor">Armor</th>
+    <th class="combat-header-stance">Stance</th>
+    <th class="combat-header-action">Action</th>
+    <th class="combat-header-edit"></th>
 
 </thead>
 
 <tbody>
 
-{{#each this.combat.teams as |t| }}    
+{{#each this.combat.teams as |t| }}
 
-<tr><td colspan="8" class="combat-hud-team"><h3>Team {{t.team}}
+<tr><td colspan="6" class="combat-hud-team"><h3>Team {{t.team}}
   
   {{#if t.name}}
   ({{t.name}})
@@ -30,29 +28,40 @@
     
     <tr>
         <td>
-          {{#if c.is_npc}}
+          <div class="combat-hud-combatant">
+            <div class="combat-hud-combatant-name">{{#if c.is_npc}}
             {{c.name}}
           {{else}}
             <LinkTo @route="char" @model={{c.name}} target="_blank">{{c.name}}</LinkTo>
           {{/if}}
-        </td>
-        
-        <td>
-          <button {{on 'click' (fn this.showDamage c)}} class="btn-link">
-            {{#if c.is_ko}}
-            
-                <i class="fa fa-crosshairs" aria-label="Knocked Out"></i>
-                K O 
-                <i class="fa fa-crosshairs" aria-hidden="true"></i>
-            
-            {{else}}
-              
-                {{#each c.damage_boxes}}
-                    <i class="fa fa-heartbeat combat-damage" aria-label="Damage Box"></i>
-                {{/each}}
-             
+            {{#if c.vehicle}}
+              ({{c.vehicle}})
             {{/if}}
-          </button>
+            </div>
+            {{#if c.is_ko}}
+            <div class="combat-hud-combatant-damage">
+              <b>DMG:</b>
+              <button {{on "click" (fn this.showDamage c)}} class="btn-link">
+                <div class="combat-hud-ko">
+                  <i class="fa fa-crosshairs" aria-label="Knocked Out"></i>
+                  K O 
+                  <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+            {{else}}
+              {{#if c.damage_boxes.length}}
+              <div class="combat-hud-combatant-damage">
+                <b>DMG:</b>
+                <button {{on "click" (fn this.showDamage c)}} class="btn-link">
+                  {{#each c.damage_boxes as |r index|}}
+                    <i class="fa-solid fa-heart-crack combat-damage-{{index}}" aria-label="Damage Box"></i>
+                  {{/each}}
+                </button>
+              </div>
+             {{/if}}
+          {{/if}}
+          </div>
         </td>
         
         <td>
@@ -60,10 +69,6 @@
         </td>
         <td>
             {{c.armor}}
-        </td>
-        
-        <td>
-            {{c.vehicle}}{{c.mount}}
         </td>
         
         <td>
@@ -76,7 +81,7 @@
         
         <td>
             {{#if c.can_edit}}
-              <TooltipButton @position="left" @message="Edit combatant." @icon="fa-duotone fa-sharp fa-pen-to-square" @route="combatant-edit" @model={{c.id}} @target="_blank" />
+              <TooltipButton @position="left" @message="Edit combatant." @icon="fa-solid fa-pen-to-square" @route="combatant-edit" @model={{c.id}} @target="_blank" />
             {{/if}}
         </td>
     </tr>
