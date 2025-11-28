@@ -43,7 +43,7 @@
           {{/if}}
         </td>
         
-         <td>
+         <td class="forum-category">
            {{#if forum.can_read}}
            <LinkTo @route="forum-category" @model={{forum.id}}>{{forum.name}}</LinkTo> 
            {{else}}
@@ -54,7 +54,7 @@
         <td class="hidden-xs hidden-sm">
         <AnsiFormat @text={{forum.description}} />
         </td>
-        <td>
+        <td class="forum-activity">
             {{#if forum.last_activity}}
               <CharIconTiny @char={{forum.last_activity.author}} /> {{forum.last_activity.date}}
               <br>
