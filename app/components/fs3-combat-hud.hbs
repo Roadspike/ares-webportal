@@ -53,7 +53,7 @@
               {{#if c.damage_boxes.length}}
               <div class="combat-hud-combatant-damage">
                 <b>DMG:</b>
-                <button {{on "click" (fn this.showDamage c)}} class="btn-link">
+                <button {{on "click" (fn this.showDamage c)}} class="btn-link damage-boxes">
                   {{#each c.damage_boxes as |r index|}}
                     <i class="fa-solid fa-heart-crack combat-damage-{{index}}" aria-label="Damage Box"></i>
                   {{/each}}
