@@ -338,10 +338,10 @@
       
       {{#if (eq this.scene.pose_order_type '3-per')}}
         Switch to regular pose order: 
-        <TooltipButton @onClick={{(fn this.switchPoseOrderType 'normal')}} @position="left" @message="Regular Order" @icon="fa fa-user" />
+        <TooltipButton @onClick={{(fn this.switchPoseOrderType 'normal')}} @position="left" @message="Regular Order" @icon="fa-duotone fa-solid fa-user-hoodie" />
       {{else}}
         Switch to 3-per pose order: 
-        <TooltipButton @onClick={{(fn this.switchPoseOrderType '3-per')}} @position="left" @message="3-Per Order" @icon="fa fa-users" />
+        <TooltipButton @onClick={{(fn this.switchPoseOrderType '3-per')}} @position="left" @message="3-Per Order" @icon="fa-kit-duotone fa-users-hoodie" />
       {{/if}}
     </BsModalSimple>
     
