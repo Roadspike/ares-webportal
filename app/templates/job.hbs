@@ -250,6 +250,9 @@
             Reply to Players
             {{/if}}
           </button>
+            {{#if this.model.job.is_open }}
+            <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
+            {{/if}}
         </div>
 
 </div>
@@ -258,9 +261,6 @@
 <a name="bottom"></a>
 
 <div class="wiki-page-nav job-nav">
-  {{#if this.model.job.is_open }}
-    <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
-  {{/if}}
   <a href="#top"><i class="fas fa-angle-double-up"></i> Jump to Top</a>
 </div>
   
