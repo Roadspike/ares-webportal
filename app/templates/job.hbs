@@ -242,7 +242,10 @@
         </div>
       {{/if}}
     {{/if}}    
-        <div class="action-buttons">
+        <div class="action-buttons job-buttons">
+          {{#if this.model.job.is_open }}
+            <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
+          {{/if}}
           <button class="btn btn-primary" {{on 'click' this.addReply}}>
             {{#if this.replyAdminOnly}}
             Reply to Admins
@@ -250,9 +253,6 @@
             Reply to Players
             {{/if}}
           </button>
-            {{#if this.model.job.is_open }}
-            <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
-            {{/if}}
         </div>
 
 </div>
