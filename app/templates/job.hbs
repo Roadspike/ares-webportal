@@ -169,7 +169,7 @@
   
 </div>
 
-<div class="wiki-page-nav scene-nav">
+<div class="wiki-page-nav job-nav">
   <a href="#bottom"><i class="fas fa-angle-double-down"></i> Jump to End</a>
 </div>
 
@@ -257,12 +257,12 @@
     
 <a name="bottom"></a>
 
-<p><a href="#top"><i class="fas fa-angle-double-up"></i> Jump to Top</a></p>
-
-
-{{#if this.model.job.is_open }}
-  <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
-{{/if}}
+<div class="wiki-page-nav job-nav">
+  {{#if this.model.job.is_open }}
+    <JobMenu @job={{this.model.job}} @abilities={{this.model.abilities}} @options={{this.model.options}} @id="jobMenuBottom" />
+  {{/if}}
+  <a href="#top"><i class="fas fa-angle-double-up"></i> Jump to Top</a>
+</div>
   
 
 <BsModalSimple @title="Confirm Delete" @closeTitle="Cancel" @submitTitle="Confirm" @size={{null}} @fade={{true}} @open={{this.replyToDelete}} @onSubmit={{this.deleteReply}} @onHide={{(fn this.setReplyToDelete null)}}>
