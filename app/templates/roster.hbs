@@ -29,7 +29,7 @@
               </div>
 
     {{#each group.chars as |char|}}
-    
+
     <div class="roster-char-title">{{char.profile_title}}</div>
     
     <div class="roster-wrap">
@@ -105,7 +105,6 @@
                 <LinkTo @route="roster-claim" @model={{char.id}} class="btn btn-primary">Claim</LinkTo>
               {{/if}}
               </div>
-            </div> <!-- /.profile-wrap -->
 
           </div> <!-- /.roster-entry -->
         {{/each}}
