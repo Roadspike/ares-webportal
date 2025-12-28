@@ -1,35 +1,23 @@
 {{page-title 'Roster'}}
 <h1>Roster</h1>
 
-<p>
-  The roster contains ready-made characters.  Some have been played before, as indicated by a
-  <span class="badge bg-info">Previously Played</span> tag.  For most characters, you can claim them and begin
-  playing immediately.  Characters marked with <span class="badge bg-warning">App Required</span> require an application.
-</p>
+<p>The roster contains ready-made characters.  Some have been played before, as indicated by a <span class="badge bg-info">Previously Played</span> tag.  For most characters, you can claim them and begin playing immediately.  Characters marked with <span class="badge bg-warning">App Required</span> require an application.</p>
 
 <ul class="nav nav-tabs">
 {{#each this.model.roster as |group|}}
-  <li class="nav-item">
-    <a data-bs-toggle="tab" href="#{{group.key}}" class="nav-link {{group.active_class}}">{{group.name}}</a>
-  </li>
+
+      <li class="nav-item"><a data-bs-toggle="tab" href="#{{group.key}}" class="nav-link {{group.active_class}}">{{group.name}}</a></li>
 {{/each}}
 </ul>
 
-<div class="tab-content" role="tablist">
-  {{#each this.model.roster as |group|}}
-    <div id="{{group.key}}" class="tab-pane fade show {{group.active_class}}">
-      <div class="roster-directory">
+<div class="tab-content" role="tablist">    
 
-        {{#each group.chars as |char|}}
-          <div class="roster-entry">
+{{#each this.model.roster as |group|}}
 
-            <div class="profile-wrap">
-              <div class="profile-image-wrap">
-                <CharIcon @char={{char}} />
-              </div>
+  <div id="{{group.key}}" class="tab-pane fade show {{group.active_class}}">
 
     {{#each group.chars as |char|}}
-
+    
     <div class="roster-char-title">{{char.profile_title}}</div>
     
     <div class="roster-wrap">
@@ -82,36 +70,10 @@
     
     {{/each}}
 
-                  <p><b>Contact:</b> {{char.contact}}</p>
+</div>
 
-                  <div class="roster-char-warnings">
-                    {{#if char.app_pending}}
-                      <span class="badge bg-danger">App Pending</span>
-                    {{/if}}
+{{/each}}
 
-                    {{#if char.previously_played}}
-                      <span class="badge bg-info">Previously Played</span>
-                    {{/if}}
-
-                    {{#if char.app_required}}
-                      <span class="badge bg-warning">App Required</span>
-                    {{/if}}
-                  </div> <!-- /.roster-char-warnings -->
-                </div> <!-- /.roster-info -->
-              </div> <!-- /.profile-box -->
-              <div class="roster-buttons">
-              <LinkTo @route="char" @model={{char.name}} class="btn btn-secondary">Profile</LinkTo>
-              {{#if (not char.app_pending)}}
-                <LinkTo @route="roster-claim" @model={{char.id}} class="btn btn-primary">Claim</LinkTo>
-              {{/if}}
-              </div>
-
-          </div> <!-- /.roster-entry -->
-        {{/each}}
-
-      </div> <!-- /.roster-directory -->
-    </div> <!-- /.tab-pane -->
-  {{/each}}
-</div> <!-- /.tab-content -->
+</div>
 
 {{outlet}}
