@@ -21,6 +21,17 @@
     </div>
   </div>
 
+<div id="legend" class="card-collapse collapse">
+  <div class="location-legend">
+  {{#each this.model.legend as |icon|}}
+  <div class="location-legend-item">
+    <i aria-hidden="true" class="{{icon.icon}} location-legend-icon"></i>
+    <span class="location-legend-name">{{icon.name}}</span>
+  </div>
+  {{/each}}
+  </div>
+</div>
+
 <div class="area-quickjump">
   {{#each this.topLevelAreas as |area index| }}
     {{#if (not (eq index 0 ))}}
