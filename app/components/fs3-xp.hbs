@@ -30,7 +30,7 @@
   <div class="xp-ability-name">New Ability</div>
 
   {{#if (and (gt this.char.fs3.xp.xp_points 0) this.char.fs3.xp.can_learn)}}
-    <div>
+    <div class="new-ability-entry">
       <Input @type="text" size={{25}} @value={{this.newAbility}} />
     </div>
 
