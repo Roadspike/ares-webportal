@@ -28,19 +28,18 @@
 <hr/>
 <div class="xp-ability">
   <div class="xp-ability-name">New Ability</div>
-  <div>
-  
-    {{#if (and (gt this.char.fs3.xp.xp_points 0) this.char.fs3.xp.can_learn)}}
-  
-    <Input @type="text" size={{25}} @value={{this.newAbility}} />
-  </div>
-  <div class="xp-learning">
-    <button class="btn btn-secondary btn-xp" {{on 'click' this.learnNewAbility}} >Learn</button>
-  </div>
-    
-    {{else}}
+
+  {{#if (and (gt this.char.fs3.xp.xp_points 0) this.char.fs3.xp.can_learn)}}
+    <div>
+      <Input @type="text" size={{25}} @value={{this.newAbility}} />
+    </div>
+
+    <div class="xp-learning">
+      <button class="btn btn-secondary btn-xp" {{on 'click' this.learnNewAbility}}>Learn</button>
+    </div>
+  {{else}}
     Out of XP
-    {{/if}}
+  {{/if}}
 </div>
 
 {{#if this.char.custom.dotcount}}
