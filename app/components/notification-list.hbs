@@ -9,7 +9,7 @@
         </td>
     <td>{{notification.timestamp}}</td>
     <td><AnsiFormat @text={{notification.message}}/></td>
-    <td>
+    <td class="notifications-controls-container">
     
       <div class="notification-controls">
         {{#if (eq notification.type 'mail')}}
